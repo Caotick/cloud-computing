@@ -39,7 +39,7 @@ def receive_message(queue_url) :
 def send_message(queue_url, goldenNonce) :
     try :
         sqs.send_message(QueueUrl = queue_url, MessageBody = 'Send goldenNonce',
-                         MessageAttributes = {'goldenNonce' : {'DataType' : 'Number', 'StringValue' : str(goldenNonce)}})
+        MessageAttributes = {'goldenNonce' : {'DataType' : 'Number', 'StringValue' : str(goldenNonce)}})
     except ClientError as e :
         logging.error(e)
         return 0
@@ -57,8 +57,17 @@ while(queue_url == None) :
 
 message_received = []
 while(len(message_received) == 0) :
-    time.sleep(5)
     message_received = receive_message(queue_url)
+    if(message_received[0].get('MessageAttributes') == None) :
+        message_received = []
+        time.sleep(30)
+    else :
+        try :
+            sqs.delete_message(QueueUrl = queue_url, ReceiptHandle = message_received[0]['ReceiptHandle'])
+        except ClientError as e :
+            logging.error(e)
+            message_received = []
+    time.sleep(5)
 message_attributes = message_received[0]['MessageAttributes']
 minNum = int(message_attributes['min']['StringValue'])
 maxNum = int(message_attributes['max']['StringValue'])
