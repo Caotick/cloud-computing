@@ -38,7 +38,8 @@ def receive_message(queue_url) :
 
 def send_message(queue_url, goldenNonce) :
     try :
-        sqs.send_message(QueueUrl = queue_url, MessageAttributes = {'goldenNonce' : {'DataType' : 'Number', 'StringValue' : str(goldenNonce)}})
+        sqs.send_message(QueueUrl = queue_url, MessageBody = 'Send goldenNonce',
+                         MessageAttributes = {'goldenNonce' : {'DataType' : 'Number', 'StringValue' : str(goldenNonce)}})
     except ClientError as e :
         logging.error(e)
         return 0
