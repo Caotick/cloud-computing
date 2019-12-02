@@ -31,6 +31,8 @@ def get_queue(queue_name) :
 def receive_message(queue_url) :
     try :
         message = sqs.receive_message(QueueUrl = queue_url, MessageAttributeNames = ['min', 'max', 'dif'], MaxNumberOfMessages = 1)
+        if(message.get('Messages') == None) :
+            return [{}]
     except ClientError as e :
         logging.error(e)
         return None
