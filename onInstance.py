@@ -9,7 +9,7 @@ def hashCompute(block, num) :
     m2 = sha256()
     m1.update(block)
     m1.update(bytes(num))
-    m2.update(bytes(m1.hexdigest()))
+    m2.update(bytes.fromhex(m1.hexdigest()))
     return int(m2.hexdigest(), 16)
 
 def goldenNonce(start, end, block_bytes, dif) :
