@@ -45,8 +45,8 @@ def send_message(queue_url, goldenNonce) :
         return 0
     return 1    
 
-s = boto3.Session(aws_access_key_id='ASIAQCOJS3VZ3QWX6WPN', aws_secret_access_key='cCIfdEl1SUaKUgMYmuZxek0HlgMpBGAzYFXGVNGW',
-aws_session_token='FwoGZXIvYXdzEM3//////////wEaDKEPDP1JRwSej0abTiLEATOa1k0w9VwfitA2dOB2xd/jw6iVR8q1388V17Od0+QnR8qIMg3/qyPsSa2HwJHMn2dhl1Y9+SbkSe/Rj3nz7928JWd+n4omK9H1i+flpzeFoQykBWEZknkKifAYVFigBqrkyfAKK6Fq4TG1wkoQ3dGEJaSoR/zQhowYU7tpbXLH4F1xn6rtBnhFV1df87RcQgjk6gwN3PJfztvMMlXf42Hb4AI7WYPD5AafaerQ2Tc0b3TQk1KRiUBAERihIDMLYe1hH44o4biQ7wUyLQoVDcE/y0gM6HmubpPsOi6b8sKr+5LBZ5loQ7pl/4iqeMqeX6j+WyngHdyJGg==')
+s = boto3.Session(aws_access_key_id='ASIAQCOJS3VZX76PZQUC', aws_secret_access_key='X5kHjUnchausHXqXi1I1xGaOHJTTU9xuAfZfBlFZ',
+aws_session_token='FwoGZXIvYXdzENz//////////wEaDPoeEjeicA+J5ms/OCLEAaQ99jYjzSsmhV6L1CQc2m3aFO35DD/6OqRCffnSinXqahqAJYHXRLdFsuldE4Ecy1yu5E7k81qMKhx0DHEfMeZpImUMnUCZewQ0S1nFySC1tq2l5JYZaitJoFZaV51P13zFQZKh3fzwNVWBtgvVrAIldWpve+8FOrqfZcE4W0yrvveSTGt2QFe7U4uzxo0ofCHbZMgGdX25k2lYF3LApPCHOXUS8VZXANW8wCWxzo3fh8HoO5kHPuJ/6utIUPBMVRdWzB4o8cqT7wUyLcEHEcdwoVX32mOCfFaFprBfu910yZzbcnKB8tsMmaj0zUVjkp4Wg7jnGHzwIw==')
 sqs = s.client('sqs')
 block = "COMSM0010cloud"
 block_bytes = bytes(block)
