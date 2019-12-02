@@ -50,7 +50,7 @@ aws_session_token='FwoGZXIvYXdzENz//////////wEaDPoeEjeicA+J5ms/OCLEAaQ99jYjzSsmh
 region_name='us-east-1')
 sqs = s.client('sqs')
 block = "COMSM0010cloud"
-block_bytes = bytes(block)
+block_bytes = bytes(block, 'utf-8')
 
 queue_url = None
 while(queue_url == None) :
