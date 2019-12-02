@@ -47,8 +47,8 @@ def send_message(queue_url, goldenNonce) :
         return 0
     return 1    
 
-s = boto3.Session(aws_access_key_id='ASIAQCOJS3VZ4CZTUAKW', aws_secret_access_key='O6bo6PSIB7ljs+D17Ed+qLPC/auvQfppUxmIyFM9',
-aws_session_token='FwoGZXIvYXdzEN///////////wEaDEA7yhknkuNfag2k3SLEAaxIv5OXzCuSKenzye8/NlqDt0quZSjl6krFpSlk5KJesM+Juhe/WQVSo6WdSc3tl/7NZ/UaY1X0YikZav4019zJfLrBxNKUJttTfdWHhlW9vxrg260kIC+mcRPbT6JrqTLRLNq8kbaPHT/2zQVFn2VYrMK06+EngA1me6w7n7IIjYytHXhXP0JRMGd412ktHoFbSEP35x4Ixvqlx+4a4UtgCE4AVJVZocx4+1r+zSIFeqvQQjdCPiMlyG8q40Ho2vn7WTsotq+U7wUyLd45ZdxE1/A8+FvcFsPLO04hCdRW5pcoG+8Q10e2xOXToAH3t/Nd0Kj2sxSS4A==',
+s = boto3.Session(aws_access_key_id='ASIAQCOJS3VZUWY324E5', aws_secret_access_key='IVf9c67AioHQe9Sk0zZz+9YhQOQh+qf63GGSnda7',
+aws_session_token='FwoGZXIvYXdzEOf//////////wEaDB8CNXhruSfAVqfKNyLEAQu4eR4QkAn4X9sCpXFqeI/YHqd6ajqZLkiKgGmAMLvbrAuK6hXTDjFKTbEps5QQQxOYrTo4W6Jdj4LsNZBroQCSqcFvyMMAluEotHpWo0cGDYrmCCOSqrzZzG9KQhDR+9FiOcufOMDG+VDTusXt/BVpKoU3mTRDpl8MF66/iAPehERBLGrx07SIpfPJAl3x06xKUOp0dpgbAuTgYMA1YwGO65PD9/gHvWLVEvz+ptfQPPOnDqg1g0mqFjthVz0sh7JpH3so0ICW7wUyLSecq5CVhP4mewrC+34h66NwIJ3OVUilQgrdyjwNhOZ1EdqpZQPSrsTrO6bJPA==',
 region_name='us-east-1')
 sqs = s.client('sqs')
 block = "COMSM0010cloud"
