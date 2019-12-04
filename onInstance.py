@@ -8,7 +8,7 @@ def hashCompute(block, num) :
     m1 = sha256()
     m2 = sha256()
     m1.update(block)
-    m1.update(bytes(num))
+    m1.update(num.to_bytes((num.bit_length + 7) // 8, byteorder = 'big'))
     m2.update(bytes.fromhex(m1.hexdigest()))
     return int(m2.hexdigest(), 16)
 
