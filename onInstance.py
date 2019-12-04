@@ -77,7 +77,6 @@ maxNum = int(message_attributes['max']['StringValue'])
 dif = int(message_attributes['dif']['StringValue'])
 
 goldenNonce = goldenNonce(minNum, maxNum, block_bytes, dif)
-print(goldenNonce)
 message_sent = 0
 while(message_sent == 0) :
     message_sent = send_message(queue_url, goldenNonce)
