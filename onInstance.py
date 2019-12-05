@@ -47,9 +47,7 @@ def send_message(queue_url, goldenNonce) :
         return 0
     return 1    
 
-s = boto3.Session(aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, aws_session_token=aws_session_token)
-region_name='us-east-1')
-sqs = s.client('sqs')
+sqs = boto3.client('sqs')
 block = "COMSM0010cloud"
 block_bytes = bytes(block, 'utf-8')
 
