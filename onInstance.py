@@ -47,8 +47,7 @@ def send_message(queue_url, goldenNonce) :
         return 0
     return 1    
 
-s = boto3.Session(aws_access_key_id='ASIAQCOJS3VZ54ICBCXP', aws_secret_access_key='YO9z/aRDZrx8RGphR64YS8bXhxTGGV5KSisnH4AG',
-aws_session_token='FwoGZXIvYXdzECMaDGrCThBFnnMfCun9wSLEAUftXrmHXE3iYlIG81pfUglj4F/kYs7yg2KXWVhz0LobUdvlGa+3Aj6KPKlKe5P2yU4y5XqxeUDHV1O+3R972VgJTSdK/QT+eFfN0+XUzTqqohVgT0ATvHA4XJ3rkLucyV8FvHCwOs4GhuKj8tqBCgNocROEqGRvDSNvF1U2zHiavqhSkY12mErqH/GuK7VMJWbmFdToLlTlZXuM5wSf33MF4ga5qR9DSfPk2aw+vTcwx26Pajc0V1jjeA91dea/cxNU1c8o5ZKj7wUyLc+vCJUmdNuiAqMzBnc7FXse3CgMmprY9n3XFjhzj40rgRMqqzdKlc293jJ9Bg==',
+s = boto3.Session(aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, aws_session_token=aws_session_token)
 region_name='us-east-1')
 sqs = s.client('sqs')
 block = "COMSM0010cloud"
