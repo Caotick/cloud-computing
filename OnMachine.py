@@ -61,6 +61,8 @@ while (n_instances <= 0 or n_instances > 15) :
 dif = 0
 while dif <= 0 :
     dif = input("What is the difficulty-level ?")
+aws_public = raw_input("Enter your aws access key id : ")
+aws_private = raw_input("Enter your aws secret access key : ")
 
 minNum = 0
 maxNum = 2**32 - 1
@@ -75,10 +77,12 @@ cd /home/ec2-user/venv
 source /home/ec2-user/venv/python3/bin/activate
 git clone https://github.com/Caotick/cloud-computing.git
 cd cloud-computing
+echo """ + aws_private + """ | cat > inputfile
+echo """ + aws_public + """ | cat - inputfile
+aws configure < inputfile
 python onInstance.py
 """
-
-start_time = time.time()
+print(user_data)
 
 ec2_instances = None
 while (ec2_instances == None) :
@@ -130,5 +134,3 @@ while (len(instances_id) != 0) :
     ec2_instances_terminated = terminate_ec2_instances(instances_id)
     for instance in ec2_instances_terminated :
         instances_id.remove(instance['InstanceId'])
-
-print(time.time() - start_time)
